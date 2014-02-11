@@ -11,20 +11,23 @@ import com.sunyue.study.Util;
  */
 public class BubbleSort extends AbstractSort {
 
+	private int[] theNumbers = new int[] { 24, 19, 26, 39, 36, 7, 31, 29, 38,
+			23 };
+
 	public void sort() {
-		displayArray();
+		Util.displayArray(theNumbers);
 		Util.split();
-		for (int i = numbers.length - 1; i >= 0; i--) {
+		for (int i = theNumbers.length - 1; i >= 0; i--) {
 			for (int j = 0; j < i; j++) {
-				if (numbers[j] > numbers[j + 1]) {
-					Util.swap(numbers, j, j + 1);
-					displayArray();
+				if (theNumbers[j] > theNumbers[j + 1]) {
+					Util.swap(theNumbers, j, j + 1);
+					Util.displayArray(theNumbers);
 				}
 			}
 			Util.split();
 		}
 		Util.split();
-		displayArray();
+		Util.displayArray(theNumbers);
 	}
 
 	/**

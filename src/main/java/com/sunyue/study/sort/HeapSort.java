@@ -20,18 +20,18 @@ public class HeapSort extends AbstractSort {
 	}
 
 	private void buildMaxRootHeap(int[] data, int lastIndex) {
-		for (int i = (lastIndex) / 2; i >= 0; i--) {
+		for (int parent = (lastIndex) / 2; parent >= 0; parent--) {
 			int bigChild = -1;
-			int leftChild = i * 2 + 1;
+			int leftChild = parent * 2 + 1;
 			if (leftChild <= lastIndex) {
 				bigChild = leftChild;
 			}
-			int rightChild = i * 2 + 2;
+			int rightChild = parent * 2 + 2;
 			if (rightChild <= lastIndex && data[leftChild] < data[rightChild]) {
 				bigChild = rightChild;
 			}
-			if (bigChild >= 0 && data[i] < data[bigChild]) {
-				Util.swap(data, i, bigChild);
+			if (bigChild >= 0 && data[parent] < data[bigChild]) {
+				Util.swap(data, parent, bigChild);
 			}
 		}
 	}
@@ -47,18 +47,18 @@ public class HeapSort extends AbstractSort {
 	}
 
 	private void buildMinRootHeap(int[] data, int lastIndex) {
-		for (int i = (lastIndex) / 2; i >= 0; i--) {
+		for (int parent = (lastIndex) / 2; parent >= 0; parent--) {
 			int smallChild = -1;
-			int leftChild = i * 2 + 1;
+			int leftChild = parent * 2 + 1;
 			if (leftChild <= lastIndex) {
 				smallChild = leftChild;
 			}
-			int rightChild = i * 2 + 2;
+			int rightChild = parent * 2 + 2;
 			if (rightChild <= lastIndex && data[leftChild] > data[rightChild]) {
 				smallChild = rightChild;
 			}
-			if (smallChild >= 0 && data[i] > data[smallChild]) {
-				Util.swap(data, i, smallChild);
+			if (smallChild >= 0 && data[parent] > data[smallChild]) {
+				Util.swap(data, parent, smallChild);
 			}
 		}
 	}
